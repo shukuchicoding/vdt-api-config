@@ -13,7 +13,8 @@ service:
   nodePort: 30415
 
 env:
-  MONGOSVC: http://192.168.49.2:30417
+  # MONGOSVC: http://192.168.49.2:30417
+  MONGOSVC: mongodb+srv://vietanhvdt:vietanh123456789@vdt.lfw9tlu.mongodb.net/?retryWrites=true&w=majority&appName=vdt
 
 container:
   name: api
