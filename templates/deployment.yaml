@@ -22,4 +22,4 @@ spec:
             - containerPort: {{ .Values.service.targetport }}
           env:
             - name: MONGOSVC
-              value: {{ .Values.env.MONGOSVC }}
+              value: {{ .Values.env.MONGO_URL }}
