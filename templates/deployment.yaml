@@ -4,7 +4,8 @@ metadata:
   name: {{ .Release.Name }}-api
   namespace: {{ .Release.Namespace }}
   labels: 
-    {{- include "api.labels" . | nindent 4 }}
+    {{- include "api-config.labels" . | nindent 4 }}
+
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
