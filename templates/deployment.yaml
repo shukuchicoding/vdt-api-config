@@ -4,18 +4,17 @@ metadata:
   name: {{ .Release.Name }}-api
   namespace: {{ .Release.Namespace }}
   labels: 
-    app: {{- include "api-config.labels" . | nindent 4 }}
+    {{- include "api-config.labels" . | nindent 4 }}
 
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      labels:
-        {{ .Release.Name }}-api
+      {{- include "api-config.selectorLabels" . | nindent 6 }}
   template:
     metadata:
       labels:
-        {{ .Release.Name }}-api
+        {{- include "api-config.labels" . | nindent 8 }}
     spec:
       containers:
         - name: {{ .Values.container.name | quote }}
